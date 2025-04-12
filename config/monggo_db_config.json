@@ -1,0 +1,23 @@
+{
+    "phone_series_url": {
+        "read_db_name": "",
+        "read_collection_name": "",
+        "save_db_name": "data",
+        "save_collection_name": "phone_series_url",
+        "save_db_error": "web_url_error"
+    },
+    "item_url": {
+        "read_db_name": "data",
+        "read_collection_name": "phone_series_url",
+        "save_db_name": "data",
+        "save_collection_name": "item_url",
+        "save_db_error": "series_url_error"
+    },
+    "item_detail": {
+        "read_db_name": "data",
+        "read_collection_name": "item_url",
+        "save_db_name": "data",
+        "save_collection_name": "item_detail",
+        "save_db_error": "item_url_error"
+    }
+}

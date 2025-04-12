@@ -1,0 +1,54 @@
+{
+    "https://bachlongmobile.com": {
+        "url_series_selector": ".block-filter-brands .branch-link",
+        "more_series_button": ".menu-link-mega-home[href='/dien-thoai/']",
+        "url_items_selector": ".info-name",
+        "more_item_button": ".flex .btn-show-content",
+        "cats_path_selector": ".breadcrumb-link",
+        "item_name_selector": ".breadcrumb-link-curr",
+        "price_selector": ".attributes-list .price-curr",
+        "color_selector": ".active .cursor-pointer .att-content .bk-product-property",
+        "rating_selector": ".evaluate-cnt",
+        "num_reviews_selector": ".evaluate-nb",
+        "storage_capacity_selector": ".active .justify-center .att-content .bk-product-property"
+    },
+    "https://cellphones.com.vn": {
+        "url_series_selector": ".brands__content .list-brand__item.button__link",
+        "more_series_button": ".block-top-home .multiple-link[href='https://cellphones.com.vn/mobile.html']",
+        "url_items_selector": ".block-product-list-filter .product__link",
+        "more_item_button": ".cps-block-content_btn-showmore .button",
+        "cats_path_selector": ".button__breadcrumb-item",
+        "item_name_selector": ".box-product-name",
+        "price_selector": ".active .tpt---sale-price",
+        "color_selector": ".active .item-variant-name",
+        "rating_selector": ".is-4",
+        "num_reviews_selector": ".boxReview-score__count",
+        "storage_capacity_selector": ".list-linked .nuxt-link-active"
+    },
+    "https://hoanghamobile.com": {
+        "url_series_selector": ".v5-brand-list a",
+        "more_series_button": "#dien-thoai-di-dong",
+        "url_items_selector": ".img-info a",
+        "more_item_button": ".v5-more-product",
+        "cats_path_selector": "a[itemprop='item']",
+        "item_name_selector": ".header-name",
+        "price_selector": ".box-price .price",
+        "color_selector": ".btn-active.selected span",
+        "rating_selector": ".stats span",
+        "num_reviews_selector": ".stats span",
+        "storage_capacity_selector": ".btn-active.selected span"
+    },
+    "https://dienmaycholon.com": {
+        "url_series_selector": ".box-quicklink__item",
+        "more_series_button": ".menu_item_child a[href='/dien-thoai-di-dong']",
+        "url_items_selector": ".list_product_cat .products .product .img_pro",
+        "more_item_button": ".see_more_cat",
+        "cats_path_selector": ".box_breadcrumb-item",
+        "item_name_selector": ".name_pro_detail",
+        "price_selector": ".box_price_layout_cost strong",
+        "color_selector": ".active .size-pro",
+        "rating_selector": ".star_average h3",
+        "num_reviews_selector": ".ratingresult strong",
+        "storage_capacity_selector": ".active .size-pro"
+    }
+}

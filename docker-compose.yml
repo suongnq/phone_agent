@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  pgvector-demo:
+    image: ankane/pgvector
+    container_name: pgvector_container
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: "251297"
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - ai_network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_container
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 251297
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - ai_network
+
+  ai_agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai_agent_container
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+      - pgvector-demo
+    networks:
+      - ai_network
+
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  ai_network:
+    driver: bridge
