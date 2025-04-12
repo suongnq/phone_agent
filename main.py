@@ -1,4 +1,4 @@
-from api import router as v1_router
+from router import router as v1_router
 from fastapi import FastAPI
 
 app = FastAPI()
