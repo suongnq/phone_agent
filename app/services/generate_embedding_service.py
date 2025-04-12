@@ -1,9 +1,10 @@
-from utilis.mongo_services import MongoDBServices
-from config import *
-from langchain_community.embeddings import OpenAIEmbeddings
-from langchain_community.vectorstores import PGVector
-from langchain_core.documents import Document
 import tiktoken
+from langchain_core.documents import Document
+from langchain_community.vectorstores import PGVector
+from langchain_community.embeddings import OpenAIEmbeddings
+
+from app.databases.mongo_services import MongoDBServices
+from app.config import MONGO_URI, EMBEDDING_MODEL, API_KEY, PG_COLLECTION_NAME, PG_CONNECTION_STRING
 
 # Get library
 mongo_db = MongoDBServices(MONGO_URI)

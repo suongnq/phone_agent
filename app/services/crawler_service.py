@@ -3,9 +3,9 @@ import argparse
 from pymongo import MongoClient
 from urllib.parse import urlparse
 
-from mongo_services import MongoDBServices
-from crawl_url import UrlCrawler
-from crawl_item_detail import ItemDetailCrawler
+from app.databases.mongo_services import MongoDBServices
+from app.databases.crawl_url import UrlCrawler
+from app.databases.crawl_item_detail import ItemDetailCrawler
 
 class Crawler:
     def __init__(self):
@@ -23,9 +23,9 @@ class Crawler:
 
     def crawling(self):
         # Read file JSON
-        with open('./config/selectors_config.json', 'r') as f:
+        with open('../config/selectors_config.json', 'r') as f:
             selectors = json.load(f)
-        with open('config/monggo_db_config.json', 'r') as f:
+        with open('../config/monggo_db_config.json', 'r') as f:
             db_configs = json.load(f)
 
         if self.crawl_type == "phone_series_url":

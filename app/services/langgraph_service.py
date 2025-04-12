@@ -3,11 +3,11 @@ import warnings
 from typing import TypedDict, List
 from langgraph.graph import StateGraph
 
-from phone_ai.query_processing_agent import QueryProcessingAgent
-from crawler.crawl_item_detail import ItemDetailCrawler
-from utilis.mongo_services import MongoDBServices
-from phone_ai.fallback_agent import FallbackAgent
-from config import (
+from app.phone_ai.query_processing_agent import QueryProcessingAgent
+from app.crawler.crawl_item_detail import ItemDetailCrawler
+from app.databases.mongo_services import MongoDBServices
+from app.phone_ai.fallback_agent import FallbackAgent
+from app.config import (
     MONGO_URI,
     PG_COLLECTION_NAME,
     PG_CONNECTION_STRING,
@@ -68,13 +68,13 @@ class PhoneAIFlow:
         )
 
     def _load_prompts(self):
-        with open("./config/system_prompts.json", "r", encoding="utf-8") as f:
+        with open("app/config/system_prompts.json", "r", encoding="utf-8") as f:
             return json.load(f)
 
     def _load_configs(self):
-        with open("./config/selectors_config.json", "r") as f:
+        with open("app/config/selectors_config.json", "r") as f:
             selectors = json.load(f)
-        with open("config/monggo_db_config.json", "r") as f:
+        with open("app/config/monggo_db_config.json", "r") as f:
             db_configs = json.load(f)
         return db_configs, selectors
 

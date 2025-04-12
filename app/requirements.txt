@@ -12,3 +12,4 @@ black==25.1.0
 requests==2.32.3
 fastapi==0.115.12
 uvicorn==0.34.0
+tiktoken==0.9.0

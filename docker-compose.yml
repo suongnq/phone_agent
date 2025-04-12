@@ -7,6 +7,7 @@ services:
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: "251297"
+      POSTGRES_DB: embedding
     ports:
       - "5432:5432"
     restart: unless-stopped
@@ -39,7 +40,9 @@ services:
       - pgvector-demo
     networks:
       - ai_network
-
+    environment:
+      PG_CONNECTION_STRING: postgresql://admin:251297@pgvector-demo:5432/embedding
+      MONGO_URI: mongodb://admin:251297@mongodb:27017/
 
 volumes:
   mongodb_data:

@@ -1,7 +1,6 @@
 import json
 import psycopg2
 
-
 class PostgresServices:
     def __init__(self, postgres_config, postgres_database_config):
         self.postgres_config = postgres_config
