@@ -35,22 +35,23 @@ http://0.0.0.0:8000/docs#
  ```
 This will open the Swagger UI for you to interact with and test the API.
 
-# 🧪 API Endpoints
-## 1. POST```/api/crawl-data```
+## 🧪 API Endpoints
+### 1. POST```/api/crawl-data```
 Run above API to crawl phone-related data in the following sequences:
 - ```type = "phone_series_url"```
 - ```type = "item_url"```
 - ```type = "item_detail"```
 
-## 2. GET ```/api/generate-embedding```
+### 2. GET ```/api/generate-embedding```
  Generate vector embeddings from the crawled data to build a semantic vector database.
 
-## 3. POST ```/api/ask-phone-agent```
+### 3. POST ```/api/ask-phone-agent```
 Ask questions about phone specifications, and the model will return answers.
 
 ```question = "your question"```
 
-# 🔁 Workflow Diagram
+## 🔁 Workflow Diagram
 The diagram below illustrates the entire flow of the Phone Agent system:
 
-![model](https://github.com/suongnq/phone_agent/workflows/phone_agent_flow.png)
+<img src="https://raw.githubusercontent.com/suongnq/phone_agent/main/app/workflows/phone_agent_flow.png" width="800"/>
+
