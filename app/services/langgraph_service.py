@@ -5,9 +5,9 @@ from langgraph.graph import StateGraph
 
 from app.phone_ai.query_processing_agent import QueryProcessingAgent
 from app.crawler.crawl_item_detail import ItemDetailCrawler
-from app.databases.mongo_services import MongoDBServices
+from app.databases.mongo import MongoDBServices
 from app.phone_ai.fallback_agent import FallbackAgent
-from app.config import (
+from app.configs import (
     MONGO_URI,
     PG_COLLECTION_NAME,
     PG_CONNECTION_STRING,
@@ -19,6 +19,10 @@ from app.config import (
     TAVILY_API_KEY,
     DOMAINS,
     MAX_RESEARCH,
+    PATH_CRAWLER_SELECTORS,
+    PATH_DB_NAME_CONFIGS,
+    PATH_SYSTEM_PROMPTS
+
 )
 
 
@@ -53,7 +57,7 @@ class PhoneAIFlow:
             self.prompts["resp_prompt"],
             TAVILY_API_KEY,
             MAX_RESEARCH,
-            DOMAINS,
+            DOMAINS
         )
 
         self.fallback_agent = FallbackAgent(
@@ -68,13 +72,13 @@ class PhoneAIFlow:
         )
 
     def _load_prompts(self):
-        with open("app/config/system_prompts.json", "r", encoding="utf-8") as f:
+        with open(PATH_SYSTEM_PROMPTS, "r", encoding="utf-8") as f:
             return json.load(f)
 
     def _load_configs(self):
-        with open("app/config/selectors_config.json", "r") as f:
+        with open(PATH_CRAWLER_SELECTORS, "r") as f:
             selectors = json.load(f)
-        with open("app/config/monggo_db_config.json", "r") as f:
+        with open(PATH_DB_NAME_CONFIGS, "r") as f:
             db_configs = json.load(f)
         return db_configs, selectors
 
