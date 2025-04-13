@@ -10,7 +10,7 @@ from app.services.generate_embedding_service import execute_generate_embedding
 
 router = APIRouter()
 
-@router.post("/ask")
+@router.post("/ask-phone-agent")
 def ask_question(request: PhoneAIRequest):
     question = request.question
 
